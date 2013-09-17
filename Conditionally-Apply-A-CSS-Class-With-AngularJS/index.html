@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<title>Demo Changing CSS Classes Conditionally with Angular</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<script src="res/js/controllers.js"></script>
+
+		<style>
+			.checkboxList {
+				border:1px solid #000;
+    				background-color:#fff; 
+    				color:#000;
+    				width:300px; 
+				height: 100px; 
+    				overflow-y: scroll;
+			}
+
+		    .uncheckedClass {
+                background-color:#eeeeee;
+                color:black;
+		    }
+
+		    .checkedClass {
+                background-color:#3ab44a;
+                color:white;
+		    }
+		</style>
+	</head>
+
+	<body ng-controller="TeamListCtrl">
+		<b>Teams</b> 
+		<div id="teamCheckboxList" class="checkboxList">
+			<div class="uncheckedClass" ng-repeat="team in teams" ng-class="{'checkedClass': team.isChecked}">
+				<label>
+        				<input type="checkbox" ng-model="team.isChecked" />
+        				<span>{{team.name}}</span>
+    				</label>
+			</div>
+		</div>
+	</body>
+</html>
