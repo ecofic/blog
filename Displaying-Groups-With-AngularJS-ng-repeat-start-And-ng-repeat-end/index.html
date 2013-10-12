@@ -1,0 +1,30 @@
+<!doctype html>
+<html ng-app>
+<head>
+    <title>Demo - Displaying Groups with AngularJS ng-repeat-start and ng-repeat-end</title>
+    <meta charset="utf-8">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
+    <script type="text/javascript" src="res/js/controllers.js"></script>
+
+    <style type="text/css">
+        .header {
+            background-color:#3ab44a;
+            color:white;
+            font-weight:bold;
+        }
+
+        .item {
+            padding-left:8px;
+        }
+    </style>
+</head>
+
+<body ng-controller="TeamListCtrl">
+    <div ng-repeat-start="team in teams">
+        <div class="header">{{team.name}}</div>
+    </div>
+    <div ng-repeat="player in team.players" class="item">{{player.firstName}} {{player.lastName}}</div>
+    <div ng-repeat-end><br /></div>
+</body>
+</html>
