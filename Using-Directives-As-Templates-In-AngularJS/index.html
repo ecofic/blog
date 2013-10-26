@@ -1,0 +1,31 @@
+﻿<!doctype html>
+<html ng-app="demo">
+<head>
+    <title>Demo - Using Directives as Templates in AngularJS</title>
+    <meta charset="utf-8">
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.3/angular.min.js"></script>
+    <script type="text/javascript" src="res/js/controllers.js"></script>
+    <script type="text/javascript" src="res/js/directives.js"></script>
+
+    <style type="text/css">
+        .header {
+            background-color: #3ab44a;
+            color: white;
+            font-weight: bold;
+        }
+
+        .item {
+            padding-left: 8px;
+        }
+    </style>
+</head>
+
+<body ng-controller="TeamListCtrl">
+    <div ng-repeat-start="team in teams" class="header">{{team.name}}</div>
+    <div ng-repeat="p in team.players" class="item">
+        <eco-ballcard player="p"></eco-ballcard>
+    </div>
+    <div ng-repeat-end><br /></div>
+</body>
+</html>
