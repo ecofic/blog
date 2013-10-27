@@ -1,4 +1,4 @@
-﻿angular.module("demo", []).directive("ecoBallcard", function () {
+﻿angular.module("demo", []).directive("ballcard", function () {
     return {
         restrict: "E",
         scope: {

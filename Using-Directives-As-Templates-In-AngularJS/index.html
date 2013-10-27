@@ -24,7 +24,7 @@
 <body ng-controller="TeamListCtrl">
     <div ng-repeat-start="team in teams" class="header">{{team.name}}</div>
     <div ng-repeat="p in team.players" class="item">
-        <eco-ballcard player="p"></eco-ballcard>
+        <ballcard player="p"></ballcard>
     </div>
     <div ng-repeat-end><br /></div>
 </body>
